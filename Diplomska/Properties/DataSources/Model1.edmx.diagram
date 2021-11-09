@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0124b8d443334f6d985ddf8fd4c6cec2" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Kontrolne_Naloge" Width="2.125" PointX="8.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Kriterij" Width="1.5" PointX="14.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Letnik" Width="1.5" PointX="4.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Poglavje" Width="1.5" PointX="1.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Predmeti" Width="1.5" PointX="5.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Rešitve" Width="1.5" PointX="11.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaDiplomskaNovaModel_Jaka.Stopnja_Težavnosti" Width="1.5" PointX="9.625" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Kontrolne__Krite__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Kontrolne__Letni__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Kontrolne__Predm__32E0915F" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Kontrolne__Rešit__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Kontrolne__Stopn__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Poglavje__Letnik__286302EC" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.125" PointY="8.125" />
+          <ConnectorPoint PointX="5.125" PointY="7.2459770019531247" />
+          <ConnectorPoint PointX="3.4273650357547321" PointY="7.2459770019531247" />
+          <ConnectorPoint PointX="3.4273650357547321" PointY="12.62210739737387" />
+          <ConnectorPoint PointX="4.24493263869759" PointY="12.62210739737387" />
+          <ConnectorPoint PointX="4.24493263869759" PointY="13.920530820978708" />
+          <ConnectorPoint PointX="3.3310812443516546" PointY="13.920530820978708" />
+          <ConnectorPoint PointX="3.3310812443516546" PointY="14.80960739737387" />
+          <ConnectorPoint PointX="2.8479732004633056" PointY="14.80960739737387" />
+          <ConnectorPoint PointX="2.8479732004633056" PointY="13.462760550164202" />
+          <ConnectorPoint PointX="1.6688252703956505" PointY="13.462760550164202" />
+          <ConnectorPoint PointX="1.502158603728984" PointY="13.462760550164202" />
+          <ConnectorPoint PointX="1.0900903184874813" PointY="13.462760550164202" />
+          <ConnectorPoint PointX="1.0900903184874813" PointY="16.523008085297381" />
+          <ConnectorPoint PointX="2.2454956945041835" PointY="16.523008085297381" />
+          <ConnectorPoint PointX="1.2832207960065962" PointY="12.061216234806057" />
+          <ConnectorPoint PointX="2.625" PointY="12.061216234806057" />
+          <ConnectorPoint PointX="2.625" PointY="6.547587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="BazaDiplomskaNovaModel_Jaka.FK__Poglavje__Predme__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

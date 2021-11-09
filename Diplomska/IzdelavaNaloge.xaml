@@ -1,0 +1,107 @@
+﻿<Window x:Class="Diplomska.IzdelavaNaloge"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplomska"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#181735" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:BazaDiplomskaNovaDataSet x:Key="bazaDiplomskaNovaDataSet"/>
+        <CollectionViewSource x:Key="predmetiViewSource" Source="{Binding Predmeti, Source={StaticResource bazaDiplomskaNovaDataSet}}"/>
+        <CollectionViewSource x:Key="stopnja_TežavnostiViewSource" Source="{Binding Stopnja_Težavnosti, Source={StaticResource bazaDiplomskaNovaDataSet}}"/>
+        <CollectionViewSource x:Key="poglavjeViewSource" Source="{Binding Poglavje, Source={StaticResource bazaDiplomskaNovaDataSet}}"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource stopnja_TežavnostiViewSource}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Background="GhostWhite" Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+
+
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Začetna stran" Foreground="Black" Grid.Column="0" FontWeight="Bold" FontSize="18"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Background="GhostWhite" BorderBrush="GhostWhite" Click="Button_Click"></Button>
+
+            <!--<TextBlock Text="Prijava" Foreground="Black" Grid.Column="1" FontWeight="Bold" FontSize="18"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+            <TextBlock Text="Naloge" Foreground="Black" Grid.Column="2" FontWeight="Bold" FontSize="18"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>-->
+
+
+            <Button x:Name="Btn_EXIT" Foreground="Black" Grid.Column="9" FontWeight="Bold" FontSize="18"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Content="Izhod" Background="GhostWhite" BorderBrush="GhostWhite" Click="Btn_EXIT_Click"></Button>
+
+
+
+        </Grid>
+
+        <ListView Name="NalogeList"
+                  SelectionMode="Single"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  Margin="20">
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal"  >
+                    <TextBlock Text="Ime Predmeta" Width="300" Foreground="DarkRed" />
+                    <TextBlock Text="Letnik" Width="200" Foreground="DarkRed" />
+                    <TextBlock Text="Poglavje" Width="80" Foreground="DarkRed" />
+                    <TextBlock Text="Stopnja Težavnosti" Width="80" Foreground="DarkRed" />
+                </StackPanel>
+            </DataTemplate>
+
+            <!--<ListView.ItemTemplate>
+                <DataTemplate x:Name="local:GetNaloge">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Name="ItemName"
+                                    Text="{x:Reference Ime Predmeta}"
+                                    Width="300" />
+                        <TextBlock Text="{x:Reference Letnik}"
+                                   Width="200" />
+                        <TextBlock Text="{x:Reference Poglavje}"
+                                   Width="80" />
+                        <TextBlock Text="{x:Reference Stopnja Težavnosti}"
+                                   Width="80" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
+        <ComboBox x:Name="predmetiComboBox" DisplayMemberPath="Ime_Predmeta" ItemsSource="{Binding Source={StaticResource predmetiViewSource}}" Margin="127,109,578,86" Grid.Row="1" SelectedValuePath="ID_Predmeta">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="297,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+
+
+
+
+
+    </Grid>
+
+</Window>
+
+
